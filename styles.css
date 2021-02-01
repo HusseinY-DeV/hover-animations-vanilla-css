@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  text-align: center;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.slider {
+  position: fixed;
+  display: grid;
+  place-content: center;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  z-index: 1;
+  background-color: rgb(39, 39, 39);
+  color: whitesmoke;
+  font-size: 30px;
+}
+
+.slider p {
+  opacity: 0;
+  letter-spacing: 5px;
+  margin: 20px;
+}
+
+.links .link {
+  display: inline-block;
+  padding: 10px;
+  text-decoration: none;
+  color: cornflowerblue;
+  position: relative;
+}
+
+.links .link::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 1px;
+  background-color: blue;
+  transition: all 0.2s ease-in-out;
+}
+
+.links .l-one::after {
+  transform-origin: left;
+  transform: scaleX(0);
+}
+
+.links .l-one:hover::after {
+  transform: scaleX(1);
+}
+
+.links .l-two::after {
+  transform-origin: right;
+  transform: scaleX(0);
+}
+
+.links .l-two:hover::after {
+  transform: scaleX(1);
+}
+
+.links .l-three::after {
+  transform-origin: center;
+  transform: scaleX(0);
+}
+
+.links .l-three:hover::after {
+  transform: scaleX(1);
+}
+
+.cards {
+  width: 80%;
+  margin: 100px auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.card {
+  height: 200px;
+}
+
+.cards img {
+  height: 200px;
+}
+
+.cards div {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.cards div::after {
+  content: "Bike";
+  position: absolute;
+  padding-top: 80px;
+  color: blue;
+  font-size: 20px;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(233, 226, 226, 0.404);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.card-one:hover::after {
+  opacity: 1;
+}
+
+.card-two::after {
+  transform-origin: left;
+  transform: scaleX(0);
+}
+
+.card-two:hover::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.card-three::after {
+  transform-origin: top;
+  transform: scaleY(0);
+}
+
+.card-three:hover::after {
+  opacity: 1;
+  transform: scaleY(1);
+}
